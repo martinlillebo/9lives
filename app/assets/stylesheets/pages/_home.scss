@@ -1,1 +1,18 @@
 // Specific CSS for your home-page
+
+
+$header_footer: pink;
+
+* {
+  text-align: center;
+}
+
+nav {
+  background-color: $header_footer;
+  padding: 10px 0px;
+}
+
+footer {
+  background-color: $header_footer;
+  padding: 10px 0px;
+}
