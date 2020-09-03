@@ -1,3 +1,11 @@
+
+This is a test project. 
+
+The goal is to create a fake site 9Lives.com - a rental site for people who want to rent a cute cat for a period of time, or maybe rent out their own cat. 
+
+
+## Everything below is from the default README template from LW:
+
 First of all make sure you've created a rails app
 
 ```bash
