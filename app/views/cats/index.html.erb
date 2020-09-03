@@ -1,10 +1,10 @@
 <h1>CATS CATS CATS</h1>
 
 <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
+  <img src="images/image1.jpeg" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">CAT NAME</h5>
-    <p class="card-text">short bio</p>
+    <p class="card-text">I like poeple who like to cuddle</p>
   </div>
   <ul class="list-group list-group-flush">
      <li class="list-group-item">Name</li>
@@ -20,22 +20,7 @@
   </div>
 </div>
 
+<%= render "booking" %>
 
 
-
-<div class="row row-cols-1 row-cols-md-2">
-  <% @cats.each do |cat| %>
-    <div class="col mb-4">
-    <%= link_to cat_path(cat) do %>
-    <div class="card">
-      <%= cl_image_tag cat.photo.key, class: "card-img-top" %>
-      <div class="card-body">
-        <h5 class="card-title"><%= cat.name %></h5>
-      </div>
-    </div>
-    <% end %>
-  </div>
-  <% end %>
-</div>
-
-<a href="http://localhost:3000/cats/new" class="btn btn-primary">Register your cat/a>
+<a href="#" class="btn btn-primary">Register your cat</a>
