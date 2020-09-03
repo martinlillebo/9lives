@@ -10,9 +10,12 @@
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
-
-  <nav>
-    <p>This is the nav</p>
+  
+  <nav class="mx-auto card-body col-6 border">
+    <h1 style="color: purple">9 Lives cat rental</h1>
+    <%= link_to root_path do %> <%# When it's time, this one will link to somewhere useful %>
+      <img class="user-avatar avatar-square" alt="avatar-square" src="https://kitt.lewagon.com/placeholder/users/leifika"/> <%# We'll add some ruby code here to switch out "leifika" with the actual user image when we have images to pick %>
+    <% end %>
   </nav>
 
   <body>

@@ -3,3 +3,7 @@ class CatsController < ApplicationController
     @cats = Cat.all
   end
 end
+
+def show
+  @cats = Cat.find(params[:id])
+end
