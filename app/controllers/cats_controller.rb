@@ -2,8 +2,23 @@ class CatsController < ApplicationController
   def index
     @cats = Cat.all
   end
-end
 
-def show
-  @cats = Cat.find(params[:id])
+  def show
+    @cats = Cat.find(params[:id])
+  end
+
+  def new
+    @cat = Cat.new
+  end
+
+  def create
+    @new_cat = Cat.create!(strong_params)
+  end
+
+  private
+
+  def strong_params
+    params.require(:cat).permit(:name, :gender, :breed, :allergies, :mood) #returns a hash with the listed key/value pairs
+  end
+
 end
