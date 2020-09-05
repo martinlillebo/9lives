@@ -17,8 +17,9 @@
      <li class="list-group-item">Avilable: <b><%=cat.available%></b></li>
   </ul>
   <div class="card-body">
-    <a href="http://localhost:3000/cats/id" class="card-link">View Profile</a>
-    <a href="http://localhost:3000/cats/id" class="card-link">Book Me</a>
+    <%= link_to "VIEW MY PROFILE", cat_path(cat) %>
+      <p> </p>
+   <%= link_to "BOOK ME", cat_path(cat) %>
   </div>
 </div>
 </div>
@@ -26,4 +27,3 @@
 <% end %>
 </div>
 </div>
-<br>
