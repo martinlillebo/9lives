@@ -13,12 +13,17 @@ class CatsController < ApplicationController
 
   def create
     @new_cat = Cat.create!(strong_params)
+    if @new_cat.save
+      redirect_to root_path(@cat)
+    else
+      render :new
+    end
   end
 
   private
 
   def strong_params
-    params.require(:cat).permit(:name, :gender, :breed, :allergies, :mood) #returns a hash with the listed key/value pairs
+    params.require(:cat).permit(:name, :gender, :breed, :allergies, :mood, :photo) #returns a hash with the listed key/value pairs
   end
 
 end
