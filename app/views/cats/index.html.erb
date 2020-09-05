@@ -1,11 +1,10 @@
 <h1>CATS CATS CATS</h1>
-
 <div class="container">
   <div class="row">
 <% @cats.each do |cat|%>
 <div class="col-sm">
 <div class="card mx-auto" style="width: 18rem;">
-  <img src="images/image1.jpeg" class="card-img-top" alt="...">
+  <%= cl_image_tag cat.photo.key, height: 200, width: 280, crop: :fill if cat.photo.attached?%>
   <div class="card-body">
     <h5 class="card-title"><b><%=cat.name%></b></h5>
     <p class="card-text">"I hate dogs"</p>
@@ -24,9 +23,7 @@
   </div>
 </div>
 </div>
-
 <br>
 <% end %>
 </div>
 </div>
-

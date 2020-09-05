@@ -12,12 +12,12 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
-<div><p><pre style="color: green"> /\_/\
+<div>
+  <p><pre style="color: green"> 
+ /\_/\
 ( o.o )
  > ^ <</pre></p>
- <%= link_to root_path do %> <%# When it's time, this one will link to somewhere useful %>
-      <img class="user-avatar avatar-square" alt="avatar-square" src="https://kitt.lewagon.com/placeholder/users/leifika"/> <%# We'll add some ruby code here to switch out "leifika" with the actual user image when we have images to pick %>
-    <% end %></div>
+</div>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">9Lives</a>
@@ -32,6 +32,9 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Cat Listings </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/cats/new">List A New Cat</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
