@@ -1,4 +1,5 @@
 class Cat < ApplicationRecord
-  validates :name, :allergies, :breed, :gender, uniqueness: true, presence: true
+  validates :name, :breed, uniqueness: true, presence: true
+  validates :gender, presence: true
   has_one_attached :photo
 end

@@ -1,0 +1,12 @@
+<h1>Ny katt</h1>
+
+<div class="col-6 mx-auto">
+  <%= simple_form_for @cat do |f| %>
+    <%= f.input :name %>
+    <%= f.input :gender %>
+    <%= f.input :breed %>
+    <%= f.input :allergies %>
+    <%= f.input :mood %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
