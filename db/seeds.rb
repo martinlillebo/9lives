@@ -6,10 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(username: "CatLover", email: "test@test.com")
-User.create(username: "CatLover80", email: "email@email.com")
+user1 = User.create(username: "CatLover", email: "test@test.com")
+user2 = User.create(username: "CatLover80", email: "email@email.com")
 
-Cat.create(name: "Cookie", gender: "female", breed: "Russian Blue", allergies: "true", mood: "happy", available: "false")
-Cat.create(name: 'Rusty', gender: 'male', breed: 'Turkish Angora', allergies: 'false', mood: 'chill', available: 'false')
+Cat.create(name: "Cookie", gender: "female", breed: "Russian Blue", allergies: "true", mood: "happy", available: "false", user_id: user1.id )
+Cat.create(name: 'Rusty', gender: 'male', breed: 'Turkish Angora', allergies: 'false', mood: 'chill', available: 'false', user_id: user2.id )
+
 
 

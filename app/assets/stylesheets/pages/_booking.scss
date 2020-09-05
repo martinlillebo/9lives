@@ -1,0 +1,315 @@
+html{
+  font-family:Roboto;
+  -webkit-font-smoothing:antialiased;
+}
+
+div{
+  box-sizing:border-box;
+}
+.calander-nav{
+  text-align:left;
+  padding:30px 0;
+  display:flex;
+  .left{
+    flex-basis:50%;
+  }
+  .right{
+    text-align:right;
+    flex-basis:50%;
+  }
+  .current-month{
+    font-size:24px;
+    font-weight:500;
+    margin:0px 10px;
+    display:inline-block;
+  }
+  .prev-month,.next-month{
+    height:30px;
+    width:30px;
+    border-radius:15px;
+    background:#f7f7f7;
+    text-align:center;
+    border:0;
+  }
+}
+.left-arrow{
+  height:10px;
+  width:10px;
+  border:2px solid grey;
+  border-top:0;
+  border-right:0;
+  transform:rotate(45deg);
+  display:inline-block;
+  vertical-align:middle;
+}
+.right-arrow{
+  height:10px;
+  width:10px;
+  border:2px solid grey;
+  border-bottom:0;
+  border-left:0;
+  transform:rotate(45deg);
+  display:inline-block;
+  vertical-align:middle;
+}
+
+.calander-container{
+  max-width:600px;
+  margin:30px auto;
+  position:relative;
+}
+
+.calander-head{
+  display:flex;
+  .head-col{
+    flex-basis:calc(100% / 7);
+    color:grey;
+    text-align:left;
+    padding:10px;
+    text-transform:uppercase;
+    font-size:16px;
+    font-weight:500;
+    letter-spacing:1px;
+  }
+}
+.calander-body{
+  margin-top:20px;
+  display:flex;
+  flex-wrap:wrap;
+  .col{
+    flex-basis:calc(100% / 7);
+    height:80px;
+    border:1px solid #dbdbdb;
+    padding:10px;
+    position:relative;
+    .date{
+      font-size:20px;
+      text-align:left;
+      color: #595757;
+      font-weight:400;
+    }
+    &:hover{
+      background:#f7f7f7;
+    }
+  }
+}
+
+.col.blocked{
+  background-color: #F3E2E2;
+  .date{
+    opacity:0.6;
+  }
+  &:hover{
+      background-color: #F3E2E2;
+    }
+}
+
+.event{
+  display:inline-block;
+  text-align:left;
+  border:0;
+  box-sizing:border-box;
+  background:#3e3e3e;
+  cursor:context-menu;
+  color:white;
+  font-size:12px;
+  position:absolute;
+  white-space:nowrap;
+  height:20px;
+  z-index:2;
+  margin-top:10px;
+  left:0;
+  &.open-end{
+    border-top-right-radius:10px;
+    border-bottom-right-radius:10px;
+  }
+  &.open-start{
+    border-top-left-radius:10px;
+    border-bottom-left-radius:10px;
+  }
+  &.airbnb,&.booking-com,&.expedia,&.homestay,&.instastay{
+    height:10px;
+    margin-left:0;
+    margin-right:0;
+    pointer-events:none;
+    cursor:auto;
+    &:before{
+      content:"";
+      height:20px;
+      width:20px;
+      border-radius:15px;
+      display:inline-block;
+      position:absolute;
+      top:-5px;
+      left:0px;
+      background-size:cover;
+    }
+    &:after{
+      content:"";
+      height:20px;
+      width:20px;
+      border-radius:15px;
+      display:inline-block;
+      position:absolute;
+      top:-5px;
+      right:0px;
+      background-size:cover;
+    }
+
+  }
+  &:focus{
+    box-shadow:0px 2px 2px 2px rgba(0,0,0,0.2);
+    border:1px solid #5B96FA;
+    outline:0;
+  }
+}
+.blocked.booked {
+  background:#F2F8EB;
+  &:hover{
+    background:#F2F8EB;
+  }
+}
+.event-text{
+  margin:0;
+  text-overflow:ellipsis;
+  overflow:hidden;
+  font-weight:500;
+}
+.event-popover{
+  padding:20px;
+  background:white;
+  z-index:5;
+  width:300px;
+  display:inline-block;
+  position:absolute;
+  box-shadow: 0 0px 4px 0 rgba(0,0,0,0.29);
+  border:1px solid #dbdbdb;
+  transition:all 0.3s ease;
+  animation:slideUp 0.3s 1;
+  .duration{
+    font-size:13px;
+    color:grey;
+  }
+  .event-name{
+    font-size:20px;
+    font-weight:300;
+    margin-top:5px;
+
+  }
+  &.left:after{
+    content:"";
+    height:20px;
+    width:20px;
+    position:absolute;
+    background:white;
+    transform:rotate(45deg);
+    top:-11px;
+    left:20px;
+    border-left:1px solid #dbdbdb;
+    border-top:1px solid #dbdbdb;
+  }
+  &.right:after{
+    content:"";
+    height:20px;
+    width:20px;
+    position:absolute;
+    background:white;
+    transform:rotate(45deg);
+    top:-11px;
+    right:20px;
+    border-left:1px solid #dbdbdb;
+    border-top:1px solid #dbdbdb;
+  }
+  .primary{
+    background:#32C11C;
+    color:white;
+    height:32px;
+    font-size:14px;
+    border:0;
+    border-radius:2px;
+    width:100%;
+    padding:0 20px;
+  }
+
+}
+
+#pop-up{
+  display:none;
+}
+@keyframes slideUp{
+  0%{
+    transform:translateY(30px);
+    opacity:0;
+  }
+}
+
+#months{
+  height:32px;
+  font-size:14px;
+  background:white;
+  border-radius:0px;
+  border:1px solid #dbdbdb;
+}
+
+.airbnb{
+  background:#FD595E;
+  &:after,&:before{
+   background-color:#FD595E;
+   background-image:url("https://cdn.pbrd.co/images/HyaBfYN.png")
+  }
+}
+.booking-com{
+  background:#003680;
+  &:after,&:before{
+   background-color:#003680;
+   background-image:url("https://cdn.pbrd.co/images/HyaAbQX.png")
+  }
+}
+.expedia{
+  background:#FEC402;
+  &:after,&:before{
+   background-color:#FEC402;
+   background-image:url("https://cdn.pbrd.co/images/HyaWYAZ.png")
+  }
+}
+.homestay{
+  background:#6A3201;
+  &:after,&:before{
+   background-color:#6A3201;
+   background-image:url("https://cdn.pbrd.co/images/HyaZixl.png")
+  }
+}
+.instastay{
+  background:#FF5722;
+  &:after,&:before{
+   background-color:#FF5722;
+   background-image:url("https://cdn.pbrd.co/images/Hyb4SSB.png")
+  }
+
+}
+
+
+
+
+
+
+@media(max-width:600px){
+  .calander-head{
+    .head-col{
+      font-size:13px;
+      padding:5px;
+    }
+  }
+  .calander-body{
+    .col{
+      height:60px;
+    .date{
+      font-size:14px;
+    }
+    &:hover{
+      background:#f7f7f7;
+    }
+  }
+}
+}
+
