@@ -12,7 +12,13 @@ class CatsController < ApplicationController
   end
 
   def create
-    @cats = Cat.create(name: params[:name], gender: params[:gender], breed: params[:breed], allergies: params[:allergies], mood: params[:mood], available: false, user_id: params[:id])
+    @new_cat = Cat.create!(strong_params)
+  end
+
+  private
+
+  def strong_params
+    params.require(:cat).permit(:name, :gender, :breed, :allergies, :mood) #returns a hash with the listed key/value pairs
   end
 
 end
