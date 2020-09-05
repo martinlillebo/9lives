@@ -1,25 +1,30 @@
 <h1>CATS CATS CATS</h1>
 
-<div class="card" style="width: 18rem;">
-   <%= cl_image_tag "cat2.png", class: "card-img-top" %>
+<div class="container">
+  <div class="row">
+<% @cats.each do |cat|%>
+<div class="col-sm">
+<div class="card mx-auto" style="width: 18rem;">
+  <img src="images/image1.jpeg" class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">CAT NAME</h5>
-    <p class="card-text">I like poeple who like to cuddle</p>
+    <h5 class="card-title"><b><%=cat.name%></b></h5>
+    <p class="card-text">"I hate dogs"</p>
   </div>
   <ul class="list-group list-group-flush">
-     <li class="list-group-item">Name</li>
-    <li class="list-group-item">allergy </li>
-    <li class="list-group-item">breed</li>
-    <li class="list-group-item">gender</li>
-     <li class="list-group-item">mood</li>
-     <li class="list-group-item">Available</li>
+    <li class="list-group-item">Gender: <b><%=cat.gender%></b></li>
+    <li class="list-group-item">Breed: <b><%=cat.breed%></b></li>
+    <li class="list-group-item">Mood: <b><%=cat.mood%></b></li>
+     <li class="list-group-item">Allergies: <b><%=cat.allergies %></b></li>
+     <li class="list-group-item">Avilable: <b><%=cat.available%></b></li>
   </ul>
   <div class="card-body">
     <a href="http://localhost:3000/cats/id" class="card-link">View Profile</a>
     <a href="http://localhost:3000/cats/id" class="card-link">Book Me</a>
   </div>
 </div>
+</div>
 
-
-
-<a href="http://localhost:3000/cats/new" class="btn btn-primary">Register your cat</a>
+<br>
+<% end %>
+</div>
+</div>
