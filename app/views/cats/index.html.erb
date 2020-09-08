@@ -1,11 +1,11 @@
-<h1>9Lives</h1>
+<h1>CATS CATS CATS</h1>
 <div class="container">
   <div class="row">
 <% @cats.each do |cat|%>
 <div class="col-sm card-margin">
 <div class="card mx-auto"  style="width: 18rem;">
   <%= cl_image_tag cat.photo.key, height: 200, width: 280, crop: :fill if cat.photo.attached?%>
-   <div class="card-body">
+  <div class="card-body">
     <h5 class="card-title"><b><%=cat.name%></b></h5>
     <p class="card-text">"I hate dogs"</p>
   </div>
@@ -27,63 +27,3 @@
 <% end %>
 </div>
 </div>
-
-
-
-
-
-<h1>9Lives</h1>
-<div class="container">
-  <div class="row">
-<% @cats.each do |cat|%>
-
-<div class="col-sm card-margin">
-<div class="card mx-auto"  style="width: 18rem;">
-  <%= cl_image_tag cat.photo.key, height: 200, width: 280, crop: :fill if cat.photo.attached?%>
-  <div class="card-body">
-   <h5 class="card-title"><b><%=cat.name%></b></h5>
-    <ul class="text">
-    <li> Gender: <b><%=cat.gender%></b></li>
-    <li> Breed: <b><%=cat.breed%></b></li>
-    <li> Mood: <b><%=cat.mood%></b></li>
-    <li> Allergies: <b><%=cat.allergies %></b></li>
-    <li> Avilable: <b><%=cat.available%></b></li>
-  </ul>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
-</div>
-</div>
-</div>
-<% end %>
-
-
-<div class="container">
-  <div class="row">
-<% @cats.each do |cat|%>
-    <div class="card float-right card-margin">
-      <div class="row">
-        <div class="col-sm-5">
-          <img class="d-block w-200" src="https://picsum.photos/150?image=641" alt="">
-        <h4 class="card-title"><b><%=cat.name%></b></h4>
-        </div>
-        <div class="col-sm-7">
-          <div class="card-block">
-          <ul style="list-style-type:none">
-              <li> Gender: <b><%=cat.gender%></b></li>
-              <li> Breed: <b><%=cat.breed%></b></li>
-              <li> Mood: <b><%=cat.mood%></b></li>
-              <li> Allergies: <b><%=cat.allergies %></b></li>
-              <li> Avilable: <b><%=cat.available%></b></li>
-            </ul>
-
-            <br>
-            <a href="#" class="btn btn-primary btn-sm float-right">Read More</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-¨</div>
-</div>
-<% end %>
