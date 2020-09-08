@@ -1,10 +1,6 @@
 class CatsController < ApplicationController
   def index
     @cats = Cat.all
-    if @hypoallergenic = "yes"
-    else
-      @hypoallergenic = "no"
-    end
   end
 
   def show
