@@ -4,7 +4,9 @@ class CatsController < ApplicationController
   end
 
   def show
+    if params[:id].present?
     @cat = Cat.find(params[:id])
+  end
   end
 
   def new
