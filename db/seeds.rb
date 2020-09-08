@@ -9,8 +9,8 @@
 user1 = User.create(username: "CatLover", email: "test@test.com")
 user2 = User.create(username: "CatLover80", email: "email@email.com")
 
-Cat.create(name: "Cookie", gender: "female", breed: "Russian Blue", allergies: "true", mood: "happy", available: "false", user_id: user1.id )
-Cat.create(name: 'Rusty', gender: 'male', breed: 'Turkish Angora', allergies: 'false', mood: 'chill', available: 'false', user_id: user2.id )
+Cat.create(name: "Cookie", gender: "female", breed: "Russian Blue", hypoallergenic: "true", mood: "happy", available: "false", user_id: user1.id )
+Cat.create(name: 'Rusty', gender: 'male', breed: 'Turkish Angora', hypoallergenic: 'false', mood: 'chill', available: 'false', user_id: user2.id )
 
 
 

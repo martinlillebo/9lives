@@ -1,6 +1,10 @@
 class CatsController < ApplicationController
   def index
     @cats = Cat.all
+    if @hypoallergenic = "yes"
+    else
+      @hypoallergenic = "no"
+    end
   end
 
   def show
@@ -23,7 +27,7 @@ class CatsController < ApplicationController
   private
 
   def strong_params
-    params.require(:cat).permit(:name, :gender, :breed, :allergies, :mood, :photo) #returns a hash with the listed key/value pairs
+    params.require(:cat).permit(:name, :gender, :breed, :hypoallergenic, :mood, :photo) #returns a hash with the listed key/value pairs
   end
 
 end
