@@ -1,30 +1,26 @@
-<p><pre style="color: green"> /\_/\
-( o.o )
- > ^ <</pre></p>
 
-<div class=container>
-  <div>
-    <% @cats.each do |cat| %>
+<div class="container bg-warning">
+  <div class="row">
+    <div class="col">
+      <% @cats.each do |cat| %>
     <% if cat.user_id = current_user.id %>
 
-CARD!!!!!!!!!!
+<b>Cats I Am Renting</b>
 
 
     <% end %>
     <% end %>
-  </div>
-</div>
+    </div>
 
-<div class=container>
-  <div>
-    <% @bookings.each do |booking| %>
+    <div class="col bg-primary">
+          <% @bookings.each do |booking| %>
     <% if booking.user_id = @user.id %>
 
-CARD!!!!!!!!!!
+<b>Cats I have for rent</b>
 
 
     <% end %>
     <% end %>
+    </div>
   </div>
-</div>
-
+  </div>
