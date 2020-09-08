@@ -13,7 +13,7 @@
     <li class="list-group-item">Gender: <b><%=cat.gender%></b></li>
     <li class="list-group-item">Breed: <b><%=cat.breed%></b></li>
     <li class="list-group-item">Mood: <b><%=cat.mood%></b></li>
-     <li class="list-group-item">hypoallergenic: <b><%=cat.hypoallergenic%></b></li>
+     <li class="list-group-item">hypoallergenic: <b><%= cat.hypoallergenic ? "yes" : "no" %></b></li>
      <!-- <li class="list-group-item">Avilable: <b><%=cat.available%></b></li> -->
   </ul>
   <div class="card-body">
