@@ -2,8 +2,9 @@
 <div class="card mb-3">
   <div class="card-body">
   </div>
-  <img src="images/image1.jpeg" class="card-img-top" alt="...">
+  <%# <img src="images/image1.jpeg" class="card-img-top" alt="..."> %>
   <div class="card-body">
+    <%= cl_image_tag @cat.photo.key, height: 200, width: 280, crop: :fill if @cat.photo.attached?%>
     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
     <h5 class="card-title"><b><%=@cat.name%></b></h5>
     <p class="card-text">"I hate dogs"</p>
