@@ -25,8 +25,9 @@
 </div>
 
 <div>
-  <%= simple_form_for @cat do |f| %>
-   <%#= f.input :start_date, as: :date, html5: true %>
+  <%= simple_form_for [@cat, @booking] do |f| %>
+   <%= f.input :start_date, as: :date, html5: true %>
+   <%= f.input :end_date, as: :date, html5: true %>
    <%= f.button :submit %>
   <% end %>
 </div>
