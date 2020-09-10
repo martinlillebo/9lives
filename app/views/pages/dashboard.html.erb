@@ -1,18 +1,28 @@
 <div class="container">
-  <div class="row">
-    <div class="col">
+  <div class="dashboard_list">
+    <div class="cat_list">
        <b>Cats I Have For Rent</b>
-      <% @cats.each do |cat| %>
-        <% if cat.user_id = current_user.id %>
-        <br>
-        <%= link_to cat.name, cat_path(cat)%>
-    <h5><b><%=cat.name%></b></h5>
-     <% end %>
-  <% end %>
-
-
+       <br>
+        <% @cats.each do |cat| %>
+          <% if cat.user_id = current_user.id %>
+            <div class="card">
+              <% if cat.photo.attached? %>
+                <%= cl_image_tag cat.photo.key, class: "card-img-top" %>
+              <% end %>
+              <div class="card-body">
+                <h5 class="card-title"><%=cat.name%></h5>
+                <%= link_to "View Profile", cat_path(cat), class:"btn btn-primary" %>
+              </div>
+            </div>
+        <% end %>
+      <% end %>
     </div>
-    <div class="col">
-      <b>Cats I Am Rening</b>
+    <div class="cat_list">
+      <b>Cats I Am Renting</b>
     </div>
   </div>
+ </div>
+
+
+
+
