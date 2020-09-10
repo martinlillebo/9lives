@@ -1,33 +1,18 @@
-<div class="container bg-warning">
+<div class="container">
   <div class="row">
     <div class="col">
+       <b>Cats I Have For Rent</b>
       <% @cats.each do |cat| %>
         <% if cat.user_id = current_user.id %>
-         <% @cats.each do |cat|%>
-<div class="col-sm card-margin">
-<div class="card mx-auto"  style="width: 18rem;">
-  <%= cl_image_tag cat.photo.key, height: 200, width: 280, crop: :fill if cat.photo.attached?%>
-   <div class="card-body">
-    <h5 class="card-title"><b><%=cat.name%></b></h5>
+        <br>
+        <%= link_to cat.name, cat_path(cat)%>
+    <h5><b><%=cat.name%></b></h5>
+     <% end %>
+  <% end %>
 
-        <% end %>
-      <% end %>
+
     </div>
-
-    <div class="col bg-primary">
-      <% @bookings.each do |booking| %>
-        <% if booking.user_id = @user.id %>
-          <b>Cats I have for rent</b>
-        <% end %>
-      <% end %>
+    <div class="col">
+      <b>Cats I Am Rening</b>
     </div>
   </div>
-  </div>
-
-
-<% @cats.each do |cat|%>
-<div class="col-sm card-margin">
-<div class="card mx-auto"  style="width: 18rem;">
-  <%= cl_image_tag cat.photo.key, height: 200, width: 280, crop: :fill if cat.photo.attached?%>
-   <div class="card-body">
-    <h5 class="card-title"><b><%=cat.name%></b></h5>
