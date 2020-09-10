@@ -26,8 +26,7 @@
 
 <div>
   <%= simple_form_for @cat do |f| %>
-   <%= f.input :username %>
-   <%= f.input :password %>
+   <%= f.input :start_date, as: :date, html5: true %>
    <%= f.button :submit %>
   <% end %>
 </div>
