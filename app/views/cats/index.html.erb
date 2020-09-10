@@ -7,13 +7,14 @@
   <%= cl_image_tag cat.photo.key, height: 200, width: 280, crop: :fill if cat.photo.attached?%>
   <div class="card-body">
     <h5 class="card-title"><b><%=cat.name%></b></h5>
-    <p class="card-text">"I hate dogs"</p>
+    <p class="list-group-item">Bio: <b><%=cat.bio%></b></p>
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">Gender: <b><%=cat.gender%></b></li>
     <li class="list-group-item">Breed: <b><%=cat.breed%></b></li>
     <li class="list-group-item">Mood: <b><%=cat.mood%></b></li>
      <li class="list-group-item">hypoallergenic: <b><%= cat.hypoallergenic ? "yes" : "no" %></b></li>
+     <li class="list-group-item">Address: <b><%=cat.address%></b></li>
      <!-- <li class="list-group-item">Avilable: <b><%=cat.available%></b></li> -->
   </ul>
   <div class="card-body">
