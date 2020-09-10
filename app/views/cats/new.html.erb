@@ -3,10 +3,12 @@
 <div class="col-6 mx-auto">
   <%= simple_form_for @cat do |f| %>
     <%= f.input :name %>
+    <%= f.input :bio %>
     <%= f.input :gender %>
     <%= f.input :breed %>
     <%= f.input :hypoallergenic %>
     <%= f.input :mood %>
+    <%= f.input :address %>
     <%= f.input :photo, as: :file %>
     <%= f.button :submit, class:"btn-outline-success my-2 my-sm-0" %>
   <% end %>
