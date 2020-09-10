@@ -1,6 +1,11 @@
 class CatsController < ApplicationController
   def index
     @cats = Cat.all
+    if params[:query]
+      @cats = Cat.where(name: params[:query])
+     end
+
+
   end
 
   def show
