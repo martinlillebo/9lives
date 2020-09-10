@@ -1,11 +1,11 @@
-<h1>9Lives</h1>
+<h1>CATS CATS CATS</h1>
 <div class="container">
   <div class="row">
 <% @cats.each do |cat|%>
 <div class="col-sm card-margin">
 <div class="card mx-auto"  style="width: 18rem;">
   <%= cl_image_tag cat.photo.key, height: 200, width: 280, crop: :fill if cat.photo.attached?%>
-   <div class="card-body">
+  <div class="card-body">
     <h5 class="card-title"><b><%=cat.name%></b></h5>
     <p class="card-text">"I hate dogs"</p>
   </div>
@@ -27,6 +27,3 @@
 <% end %>
 </div>
 </div>
-
-
-
