@@ -5,10 +5,10 @@
     <title>*** <^_^> 9Lives <^_^> ***</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= stylesheet_pack_tag 'map' %>
       <script> scr="<_booking class="js"></_booking></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
@@ -55,6 +55,7 @@
     <p class="alert"><%= alert %></p>
 
     <%= yield %>
+    <%= javascript_pack_tag 'application' %>
   </body>
 
   <footer>
