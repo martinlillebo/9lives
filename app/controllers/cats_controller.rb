@@ -23,6 +23,8 @@ class CatsController < ApplicationController
   def show
     @cat = Cat.find(params[:id])
     @booking = Booking.new
+
+    @markers = [{lat: @cat.latitude, lng: @cat.longitude}]
   end
 
   def new
