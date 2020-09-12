@@ -20,9 +20,6 @@ class CatsController < ApplicationController
     end
   end
 
-
-  end
-
   def show
     @cat = Cat.find(params[:id])
     @booking = Booking.new
@@ -46,3 +43,4 @@ class CatsController < ApplicationController
   def strong_params
     params.require(:cat).permit(:name, :gender, :breed, :hypoallergenic, :mood, :photo, :bio, :address) #returns a hash with the listed key/value pairs
   end
+end
