@@ -4,7 +4,6 @@
       <b>Cats I Have For Rent</b>
       <br>
       <% @cats.each do |cat| %>
-        <% if cat.user_id = current_user.id %>
           <div class="card">
             <% if cat.photo.attached? %>
               <%= cl_image_tag cat.photo.key, class: "card-img-top" %>
@@ -14,7 +13,6 @@
               <%= link_to "View Profile", cat_path(cat), class:"btn btn-primary" %>
             </div>
           </div>
-        <% end %>
       <% end %>
     </div>
     <div class="cat_list">

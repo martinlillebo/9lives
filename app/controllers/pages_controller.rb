@@ -1,9 +1,9 @@
 class PagesController < ApplicationController
 before_action :authenticate_user!
   def dashboard
-    @cats=Cat.all
-    @user=current_user
-    @bookings=Booking.all
+    @cats = current_user.cats
+    @user = current_user
+    @bookings = Booking.all
   end
 
   def search

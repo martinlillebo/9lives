@@ -33,7 +33,8 @@ class CatsController < ApplicationController
   end
 
   def create
-    @new_cat = Cat.create!(strong_params)
+    @new_cat = Cat.new(strong_params)
+    @new_cat.user = current_user
     if @new_cat.save
       redirect_to root_path(@cat)
     else
