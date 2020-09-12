@@ -1,13 +1,17 @@
 class CatsController < ApplicationController
   def index
     @cats = Cat.all
-
     @markers = @cats.geocoded.map do |flat|
       {
         lat: flat.latitude,
         lng: flat.longitude
       }
     end
+    
+    if params[:query]
+      @cats = Cat.where(name: params[:query])
+     end
+
   end
 
   def show
@@ -31,6 +35,6 @@ class CatsController < ApplicationController
   private
 
   def strong_params
-    params.require(:cat).permit(:name, :gender, :breed, :hypoallergenic, :mood, :photo) #returns a hash with the listed key/value pairs
+    params.require(:cat).permit(:name, :gender, :breed, :hypoallergenic, :mood, :photo, :bio, :address) #returns a hash with the listed key/value pairs
   end
 end
