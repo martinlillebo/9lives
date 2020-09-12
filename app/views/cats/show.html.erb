@@ -1,7 +1,9 @@
-<div class="card mb-3">
-  <div class="card-body">
-    <%# <img src="images/image1.jpeg" class="card-img-top" alt="..."> %>
-    <div class="card-body">
+
+<div class="container">
+  <div class="card mb-3">
+  <div class="row">
+    <div class="col">
+      <div class="card-body">
       <%= cl_image_tag @cat.photo.key, height: 200, width: 280, crop: :fill if @cat.photo.attached?%>
       <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
       <h5 class="card-title"><b><%=@cat.name%></b></h5>
@@ -14,16 +16,23 @@
       <li class="list-group-item">Hypoallergenic: <b><%=@cat.hypoallergenic %></b></li>
       <li class="list-group-item">Address: <b><%=@cat.address%></b></li>
     </ul>
-    <div>
-      <a href="http://localhost:3000/cats" class="card-link">Back</a>
-      <a href="#" class="card-link">Book Me</a>
     </div>
+    <div class="col">
+      <div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    </div>
+  </div>
     <div>
+      <br>
+      <b>Select a date below to book this cat</b>
       <%= simple_form_for [@cat, @booking] do |f| %>
         <%= f.input :start_date, as: :date, html5: true %>
         <%= f.input :end_date, as: :date, html5: true %>
-        <%= f.button :submit %>
+        <%= f.button :submit, class: "btn-primary" %>
       <% end %>
+      <br>
     </div>
   </div>
 </div>
