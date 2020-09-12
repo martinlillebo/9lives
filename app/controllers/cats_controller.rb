@@ -29,7 +29,7 @@ class CatsController < ApplicationController
   private
 
   def strong_params
-    params.require(:cat).permit(:name, :gender, :breed, :hypoallergenic, :mood, :photo) #returns a hash with the listed key/value pairs
+    params.require(:cat).permit(:name, :gender, :breed, :hypoallergenic, :mood, :photo, :bio, :address) #returns a hash with the listed key/value pairs
   end
 
 end
