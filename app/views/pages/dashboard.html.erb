@@ -1,5 +1,6 @@
 <div class="container">
   <div class="dashboard_list">
+
     <div class="cat_list">
       <b>Cats I Have For Rent</b>
       <br>
@@ -15,9 +16,25 @@
           </div>
       <% end %>
     </div>
+
     <div class="cat_list">
       <b>Cats I Am Renting</b>
+           <br>
+      <% @bookings.each do |booking| %>
+        <% if booking.cat.user_id = current_user.id %>
+          <div class="card">
+            <% if booking.cat.photo.attached? %>
+              <%= cl_image_tag booking.cat.photo.key, class: "card-img-top" %>
+            <% end %>
+            <div class="card-body">
+              <h5 class="card-title"><%=booking.cat.name%></h5>
+              <%= link_to "View Profile", cat_path(booking.cat), class:"btn btn-primary" %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
     </div>
+
   </div>
  </div>
 
