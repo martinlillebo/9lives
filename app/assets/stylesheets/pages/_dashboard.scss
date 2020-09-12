@@ -1,9 +1,12 @@
 .cat_list{
 display: grid;
 grid-template-columns:1fr 1fr;
+grid-gap: 10px;
+margin-bottom: 10px;
 }
 
 .dashboard_list {
 display: grid;
 grid-template-columns:1fr 1fr;
 }
+
