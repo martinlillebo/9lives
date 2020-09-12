@@ -6,3 +6,9 @@
 .card-margin {
   margin-bottom:15px;
 }
+
+.card-with-image img{
+  object-fit: cover;
+  height: 200px;
+  width: 280px;
+}
