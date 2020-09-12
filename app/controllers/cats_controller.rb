@@ -7,10 +7,19 @@ class CatsController < ApplicationController
         lng: flat.longitude
       }
     end
-    
-    if params[:query]
-      @cats = Cat.where(name: params[:query])
-     end
+
+     if params[:query].present?
+      sql_query = " \
+        cats.name ILIKE :query \
+        OR cats.breed ILIKE :query \
+        OR cats.gender ILIKE :query \
+      "
+      @cats = Cat.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @movies = Cat.all
+    end
+  end
+
 
   end
 
@@ -37,4 +46,3 @@ class CatsController < ApplicationController
   def strong_params
     params.require(:cat).permit(:name, :gender, :breed, :hypoallergenic, :mood, :photo, :bio, :address) #returns a hash with the listed key/value pairs
   end
-end
