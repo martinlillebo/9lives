@@ -1,4 +1,5 @@
 class CatsController < ApplicationController
+  before_action :authenticate_user!
   def index
     @cats = Cat.all
     @markers = @cats.geocoded.map do |flat|
