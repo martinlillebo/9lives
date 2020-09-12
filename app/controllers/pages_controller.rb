@@ -3,7 +3,7 @@ before_action :authenticate_user!
   def dashboard
     @cats=Cat.all
     @user=current_user
-    @bookings=Booking.all
+    @bookings=current_user.bookings
   end
 
   def search
